@@ -10,9 +10,6 @@ public class MazeRenderer : MonoBehaviour
 
     [SerializeField]private Transform wallPrefab = null;
 
-    [SerializeField]private Transform WinBlockPrefab = null;
-
-
     [SerializeField]internal float size = 1.0f;                 
 
 //``````````````````````````````````````````````````````````````````````````````````````````````````````````

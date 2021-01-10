@@ -5,13 +5,12 @@ using UnityEngine;
 public class WinCondition : MonoBehaviour
 {
 
-    private MazeRenderer mazeRenderer;
+    [SerializeField]private MazeRenderer mazeRenderer;
+    [SerializeField]private LevelLoader levelLoader; 
    
     private void Start() {
 
-        mazeRenderer = FindObjectOfType<MazeRenderer>();
-
-        //move win block to otherCorner
+        //move win block to desired position
         Vector3 WinBlockPosition = new Vector3((mazeRenderer.width-1)*mazeRenderer.size,1,(mazeRenderer.height-1)*mazeRenderer.size);
         transform.position = WinBlockPosition;
     }
@@ -20,7 +19,7 @@ public class WinCondition : MonoBehaviour
 
         if(other.gameObject.tag=="Player"){
             //player Won
-            Debug.Log("playerWon");   
+            levelLoader.LoadNextLevel();   
         }
     }     
 

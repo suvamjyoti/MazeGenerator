@@ -7,6 +7,7 @@ public class RestartButton : MonoBehaviour
 {
 
     private Button button;
+    [SerializeField]private LevelLoader levelLoader;
 
     void Start(){
 
@@ -15,7 +16,6 @@ public class RestartButton : MonoBehaviour
     }
 
     void restart(){
-        //do on click of button
-          
+          levelLoader.Restart();
     }
 }
