@@ -10,9 +10,8 @@ public class MazeRenderer : MonoBehaviour
 
     [SerializeField]private Transform wallPrefab = null;
 
-    [SerializeField]private Transform floorPrefab = null;
 
-    [SerializeField]private float size = 1.0f;                  
+    [SerializeField]private float size = 1.0f;                 
 
 //``````````````````````````````````````````````````````````````````````````````````````````````````````````
 //``````````````````````````````````````````````````````````````````````````````````````````````````````````
@@ -28,17 +27,13 @@ public class MazeRenderer : MonoBehaviour
 
     void Draw(StateOfWall[,] maze){
 
-        //instantiate floor
-        var floor = Instantiate(floorPrefab,transform);
-        floor.localScale = new Vector3(width/10,1,height/10);
-
-        //actual drawing of maze using wall prefab the matrix data created
+        //actual drawing of maze using wall prefab and the matrix data created
         
         for (int i = 0; i < width; ++i){
             for (int j = 0; j < height; ++j){
 
                 var cell = maze[i, j];
-                var position = new Vector3(-(width / 2)*size+ i*size, 0, (-height / 2)*size+ j*size);
+                Vector3 position = new Vector3( i*size, 0,j*size);
 
                 if (cell.HasFlag(StateOfWall.Up))
                 {
