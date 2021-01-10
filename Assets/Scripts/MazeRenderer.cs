@@ -5,13 +5,15 @@ using UnityEngine;
 public class MazeRenderer : MonoBehaviour
 {
 
-    [SerializeField][Range(1,30)]private int height=10;
-    [SerializeField][Range(1,30)]private int width=10;
+    [SerializeField][Range(1,30)]internal int height=10;
+    [SerializeField][Range(1,30)]internal int width=10;
 
     [SerializeField]private Transform wallPrefab = null;
 
+    [SerializeField]private Transform WinBlockPrefab = null;
 
-    [SerializeField]private float size = 1.0f;                 
+
+    [SerializeField]internal float size = 1.0f;                 
 
 //``````````````````````````````````````````````````````````````````````````````````````````````````````````
 //``````````````````````````````````````````````````````````````````````````````````````````````````````````
